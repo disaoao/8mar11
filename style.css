@@ -1,0 +1,110 @@
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh; /* Используем min-height, чтобы контент не обрезался */
+  font-family: sans-serif;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  box-sizing: border-box; /* Важно для корректного учета padding и border */
+  padding-bottom: 20px; /* Отступ снизу, чтобы нижний GIF не прилипал к краю */
+}
+
+#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  object-fit: cover;
+}
+
+.main-overlay {
+  font-size: 4em;
+  -webkit-text-stroke: 2px black;
+  text-stroke: 2px black;
+  margin-top: 5vh;
+}
+
+.poem-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5vh;
+  width: 100%; /* Занимает всю ширину */
+  padding: 0 20px; /* Отступы по бокам для более комфортного отображения на небольших экранах */
+  box-sizing: border-box;
+}
+
+.poem-overlay {
+  font-size: 2.5em;
+  white-space: pre-line;
+  width: 50%;
+  text-align: center;
+  padding: 10px; /* Добавляем отступы внутри */
+  box-sizing: border-box;
+}
+
+.gif-container {
+  width: 250px;
+  height: 250px;
+  margin: 0 10px;
+}
+
+.gif-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.personal-message {
+  font-size: 1.5em;
+  margin-top: 5vh;
+  width: 80%;
+  margin-bottom: 5vh;
+  box-sizing: border-box; /* Важно для корректного расчета ширины с padding */
+  padding: 10px; /* Добавляем отступы внутри */
+}
+
+#bottom-gif-container {
+  width: 400px;
+  height: 400px;
+  margin-bottom: 20px;
+}
+
+#bottom-gif-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+  .main-overlay {
+    font-size: 3em; /* Уменьшаем шрифт для маленьких экранов */
+  }
+
+  .poem-container {
+    flex-direction: column; /* Перестраиваем в колонку на маленьких экранах */
+    align-items: center;
+  }
+
+  .poem-overlay {
+    width: 90%; /* Увеличиваем ширину текста на маленьких экранах */
+    font-size: 1.8em; /* Уменьшаем шрифт текста на маленьких экранах */
+  }
+
+  .gif-container {
+    width: 150px; /* Уменьшаем размер GIF-анимаций на маленьких экранах */
+    height: 150px;
+    margin: 10px 0; /* Отступы сверху и снизу, когда GIF-ы в колонке */
+  }
+
+  #bottom-gif-container {
+    width: 250px; /* Уменьшаем размер нижнего GIF-а на маленьких экранах */
+    height: 250px;
+  }
+}
